@@ -1,10 +1,12 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-    <title>Welcome to Eaint's Awesome Website!</title>
-    <style type="text/css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Eaint Myet Chel: CIS 047 Student Website</title>
+    <style>
         body {
-            font-family: Verdana;
+            font-family: Verdana, sans-serif;
             background: rgb(232, 152, 213);
             color: rgb(96, 4, 152);
         }
@@ -15,35 +17,44 @@
             border-radius: 15px;
             background: rgb(201, 149, 190);
             color: rgb(98, 8, 125);
-            width: 500px;
-            margin: auto;
+            max-width: 500px;
+            margin: 1em auto;
         }
 
         main {
             display: block;
-            width: 60%;
+            max-width: 40em;
             margin: 2em auto;
             border: solid thin #000;
             border-radius: 15px;
             padding: 1em;
         }
-        
-        a:link { color: aqua; }
-        a:visited { color: aquamarine; }
+
+        footer { text-align: center; }
+
+        a:link { color: rgb(0, 0, 140); }
+        a:visited { color: rgb(75, 0, 110); }
+        a:focus-visible {
+            outline: 3px solid #000;
+            outline-offset: 2px;
+        }
     </style>
 </head>
 <body>
-    <h1>Welcome to Eaint's CIS07 Website!</h1>
+    <header>
+        <h1>Welcome to Eaint's CIS 047 Website!</h1>
+    </header>
     <main>
         <p>Hi! My name is Eaint Myet Chel.</p>
-        <p>I am currently enrolled in CIS 047 taught at San Jos&eacute; City College.</p>
+        <p>I am currently enrolled in CIS 047 at
+            <a href="https://www.sjcc.edu/">San Jos&eacute; City College</a>.</p>
         <p>I am a student specializing in Business Analytics.</p>
-        <p>I love hosting a party at my place and I also love to watch 
-            <br> together with friends.</p>
-        <p>I hope to learn about creating a web page from this CIS047 class.</p>
+        <p>I love hosting parties at my place, and I also love to watch
+            [what you watch] together with friends.</p>
+        <p>I hope to learn about creating a web page from this CIS 047 class.</p>
     </main>
-
-    <address>Copyright &copy; 2026, Eaint Myet Chel</address>
-
+    <footer>
+        <p>Copyright &copy; 2026, Eaint Myet Chel</p>
+    </footer>
 </body>
 </html>
