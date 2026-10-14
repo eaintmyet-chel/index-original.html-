@@ -116,6 +116,12 @@ main {
     scroll-margin-top: var(--space-m);
 }
 
+.card img {
+    display: block;
+    margin-top: var(--space-m);
+    border-radius: var(--radius);
+}
+
 /* 6. Links and interaction -------------------------------- */
 a:link { color: var(--color-link); }
 a:visited { color: var(--color-link-visited); }
