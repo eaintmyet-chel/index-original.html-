@@ -1,1 +1,162 @@
+/* ==========================================================
+   styles.css – Eaint Myet Chel, CIS 047
+   Sections: 1 Variables · 2 Base · 3 Header & nav · 4 Main
+             5 Cards (Grid) · 6 Links & interaction
+             7 Footer · 8 Wider screens · 9 Reduced motion
+   ========================================================== */
 
+/* 1. Custom properties ------------------------------------ */
+:root {
+    --color-bg: #f5dff0;          /* soft pink page background */
+    --color-surface: #fff7fc;     /* card background */
+    --color-ink: #35084a;         /* body text (≈ 13:1 on bg) */
+    --color-accent: #5c1a86;      /* headings, borders (≈ 8:1 on bg) */
+    --color-link: #00008c;        /* links (≈ 11:1 on surface) */
+    --color-link-visited: #4b006e;
+    --color-highlight: #e6c3f2;   /* hover fill */
+
+    --space-s: 0.5rem;
+    --space-m: 1rem;
+    --space-l: 2rem;
+    --radius: 15px;
+    --border: 2px solid var(--color-accent);
+}
+
+/* 2. Base ------------------------------------------------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: var(--space-m);
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    background: var(--color-bg);
+    color: var(--color-ink);
+}
+
+h1,
+h2 {
+    line-height: 1.2;
+    color: var(--color-accent);
+}
+
+h1 { font-size: 1.6rem; }
+h2 {
+    font-size: 1.25rem;
+    margin: 0 0 var(--space-s);
+}
+
+p { margin: 0 0 var(--space-m); }
+p:last-child { margin-bottom: 0; }
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 3. Header and navigation (Flexbox) ---------------------- */
+.site-header {
+    max-width: 60rem;
+    margin: 0 auto var(--space-l);
+    padding: var(--space-m);
+    text-align: center;
+    background: var(--color-surface);
+    border: var(--border);
+    border-radius: var(--radius);
+}
+
+.site-header h1 {
+    margin: 0 0 var(--space-m);
+}
+
+.site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-s);
+}
+
+.site-nav a {
+    padding: var(--space-s) var(--space-m);
+    border: var(--border);
+    border-radius: var(--radius);
+}
+
+/* 4. Main content ----------------------------------------- */
+main {
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+.intro {
+    max-width: 40em;
+    margin-bottom: var(--space-l);
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+/* 5. Cards (Grid) ----------------------------------------- */
+.card-grid {
+    display: grid;
+    grid-template-columns: 1fr;   /* one column on narrow screens */
+    gap: var(--space-m);
+}
+
+.card {
+    padding: var(--space-m);
+    background: var(--color-surface);
+    border: var(--border);
+    border-radius: var(--radius);
+    scroll-margin-top: var(--space-m);
+}
+
+/* 6. Links and interaction -------------------------------- */
+a:link { color: var(--color-link); }
+a:visited { color: var(--color-link-visited); }
+
+a {
+    text-decoration: underline;       /* not identified by color alone */
+    text-underline-offset: 0.2em;
+    transition: background-color 0.2s ease;
+}
+
+a:hover {
+    background: var(--color-highlight);
+    text-decoration-thickness: 3px;
+}
+
+a:focus-visible {
+    outline: 3px solid #000;
+    outline-offset: 3px;
+    background: var(--color-highlight);
+}
+
+/* 7. Footer ----------------------------------------------- */
+.site-footer {
+    margin-top: var(--space-l);
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* 8. Wider screens ---------------------------------------- */
+/* Breakpoint chosen where three cards fit side by side comfortably */
+@media (min-width: 48em) {
+    body { padding: var(--space-l); }
+
+    h1 { font-size: 2.2rem; }
+
+    .card-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* 9. Reduced motion --------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+    a { transition: none; }
+}
